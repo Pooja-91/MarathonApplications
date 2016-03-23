@@ -1,3 +1,7 @@
+if(!(sessionStorage.getItem("stage")== "step1"))
+    {
+        document.location.href = '../index.html';
+    } 
 
 var refCustTrans = new Firebase('https://swachevent2016.firebaseio.com/Customer_transaction');
 

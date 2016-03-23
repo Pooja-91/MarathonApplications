@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,21 +9,22 @@
 		<meta name="keywords" content="" />
 		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
 		<script src="../js/jquery.min.js"></script>
+        <script src="../js/inspect.js"></script>
 		<script src="../js/skel.min.js"></script>
 		<script src="../js/skel-layers.min.js"></script>
 		<script src="../js/init.js"></script>
     <script src="../libs/firebase.js"></script>
-    
+
     <script src="../js/paymentFormValidation.js"></script>
     <script src="../libs/jquery.validate.min.js"></script>
     <script src="../libs/additional-methods.min.js"></script>
-    
-   
+
+
 			<link rel="stylesheet" href="../css/skel.css" />
 			<link rel="stylesheet" href="../css/style.css" />
 			<link rel="stylesheet" href="../css/style-xlarge.css" />
 		 <link rel="stylesheet" href="../css/main/payment.css" />
-		
+
 	</head>
 <?php
 require '../smtp_mail/PHPMailerAutoload.php';
@@ -56,7 +56,7 @@ function payment_success($trans_id, $productinfo, $amount, $mailSentFalg) {
                 </label>
             </div>
         </div>
-        
+
         <div class="row">
             <div class="col-sm-12">
                 <label id="confmess">Registration ID :
@@ -70,8 +70,8 @@ function payment_success($trans_id, $productinfo, $amount, $mailSentFalg) {
                     <?php echo $_COOKIE['ConfirmationID']; ?>
                 </label>
             </div>
-        </div>    
-       
+        </div>
+
         <div class="row">
             <div class="col-sm-12">
                 <label id="confmess">Transaction ID :
@@ -79,7 +79,7 @@ function payment_success($trans_id, $productinfo, $amount, $mailSentFalg) {
                 </label>
             </div>
         </div>
-        
+
          <div class="row">
             <div class="col-sm-12">
                 <label id="confmess">PayU ID :
@@ -92,13 +92,13 @@ function payment_success($trans_id, $productinfo, $amount, $mailSentFalg) {
                 <label id="confmess">Registration Fee  : Rs.
                     <?php echo ($amount-round($amount-$amount/1.025)) ?>
                 </label>
-                
+
             </div>
         </div>
         <div class="row">
             <div class="col-sm-12">
                 <label id="confmess">Internet Handling Charges  : Rs.
-                    
+
                     <?php echo round($amount-$amount/1.025) ?>
                 </label>
             </div>
@@ -111,27 +111,27 @@ function payment_success($trans_id, $productinfo, $amount, $mailSentFalg) {
                 </label>
                &nbsp;&nbsp;
                  <span name='amount' id="price">Including(+2.5% Tax)</span>
-                
-                
+
+
             </div>
         </div>
-      
+
          <div class="row">
                 <div class="col-sm-12">
                     <label id="confmess">Message: Thank You for being part of Force to Spread SportAbilities by contributing your money, time and efforts to support the future of Para-Sports in India </label>
                 </div>
-            </div> 
+            </div>
          <script>
                 //save data to db  Customer transaction details
                 paymentSuccess('<?php echo $productinfo; ?>', '<?php echo $amount; ?>', '<?php echo $trans_id; ?>', "<?php echo $_POST['mihpayid']?>", "<?php echo $_COOKIE['regid']?>", "<?php echo $_POST['status']?>");
-            </script>    
+            </script>
             <script>
                 //save data to db  Customer transaction details
                 emailSend("<?php echo $_POST['email']?>", "tickets@get2thegames.com", "Get2TheGames - Swachh Hydrabad Event 2016 Registration", "<?php echo $_POST['status']?>", "<?php echo $_POST['productinfo']?>", "<?php echo date('Y-m-d')?>", "<?php echo $_POST['txnid']?>", "<?php echo $_POST['mihpayid']?>", "<?php echo $_POST['amount']?>", "<?php echo $_COOKIE['regid']?>");
             </script>
-       
-        
-      
+
+
+
         <?php
     if($mailSentFalg){
       echo "<h5>Please Check Your Mail. A Confirmation mail has been sent to your registered E-Mail ID.</h5>";
@@ -164,46 +164,46 @@ function payment_success($trans_id, $productinfo, $amount, $mailSentFalg) {
              <script>
                 //save data to db  Customer transaction details
                 paymentSuccess('<?php echo $productinfo; ?>', '<?php echo $amount; ?>', '<?php echo $trans_id; ?>', "<?php echo $_POST['mihpayid']?>", "<?php echo $_COOKIE['regid']?>", "<?php echo $_POST['status']?>");
-            </script>    
+            </script>
             <script>
                 //save data to db  Customer transaction details
                 emailSend("<?php echo $_POST['email']?>", "tickets@get2thegames.com", "Get2TheGames - Swachh Hydrabad Event 2016 Registration", "<?php echo $_POST['status']?>", "<?php echo $_POST['productinfo']?>", "<?php echo date('Y-m-d')?>", "<?php echo $_POST['txnid']?>", "<?php echo $_POST['mihpayid']?>", "<?php echo $_POST['amount']?>", "<?php echo $_COOKIE['regid']?>");
             </script>
         </body>
-    
+
         <?php
 }
-   
-    
-    
-    
-    
-    
+
+
+
+
+
+
 function payment_form()
 {
 ?>
 <body >
     <section>
-        
-          
+
+
 <div class="container" style="margin-top:10px;">
     <h1>Billing Details</h1>
-					
+
 						<form action="" method="post" id="form2" >
-         
-           
+
+
         <div class="col-lg-offset-4">
             <input type="text"  id="fullName" placeholder="Full Name" name="FirstName" ><br>
-           </div> 
-            
+           </div>
+
             <input type="email"  id="inputEmail" placeholder="Email" name="Email"><br>
-            
+
             <input type="text"  id="mobileNum" placeholder="Mobile Number" name="Phone" ><br>
             <input type="text"  id="address" placeholder="Address" name="Address" ><br><br>
             <label style="color:black">Your Amount is</label>
              <input style="border: azure; width:60px" name='amount' id="price" type='text' value="" readonly>Including(+2.5% Tax)<br>
-                                     
-     
+
+
 <br>
     </form>
     <div>
@@ -215,13 +215,13 @@ function payment_form()
 
 </div>
 </section>
-					
-					
-							
-        
-     
 
-   
+
+
+
+
+
+
 </body>
 <?php
 }
@@ -359,23 +359,23 @@ if($_POST && !empty($_POST) && isset($_POST['status']) && isset($_POST['unmapped
 }
 else //If Form POST data are valid send them to PAYU
 if ($_POST['FirstName'] && $_POST['Email'] && $_POST['Phone'] && (int)$_POST['Phone'] && (int)$_POST['amount'] ){
-  pay_page( array ('key' => 'gtKFFx', 'txnid' => uniqid( 'swachhEvent_' ), 'amount' => $_POST['amount'],
+  pay_page( array ('key' => 'ryBWbt', 'txnid' => uniqid( 'swachhEvent_' ), 'amount' => $_POST['amount'],
       'firstname' => $_POST['FirstName'], 'email' => $_POST['Email'], 'phone' => $_POST['Phone'], 'address1'=> $_POST['Address'],
       'productinfo' => 'Swachh Event 2016', 'surl' => 'payment_success', 'furl' => 'payment_failure'),
-      'eCwWELxi' );
+      'xy9IH2g8' );
 }
 else  //If Form POST data are not valid show error
 if($_POST && !empty($_POST) && (!$_POST['FirstName'] || !$_POST['Email'] || !$_POST['Phone'] || !(int)$_POST['Phone'] || !(int)$_POST['amount'])){
 //echo "<pre>";print_r($_POST);
-        
+
   echo "<p class='error-info'>Please Provide all details with valid info.</p>";
 }else{
-    
+
    // echo '<script type="text/javascript">alert();SaveCustomer();</script>';
   payment_form();
 }
 ?>
-    
+
 
 
 </html>
