@@ -1,0 +1,140 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Participant Registration</title>
+	<meta charset="UTF-8">
+		<title>Swachh Event</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
+		<script src="../js/jquery.min.js"></script>
+        <script src="../libs/firebase.js"></script>
+        <script src="../libs/jquery.validate.min.js"></script>
+        <script src="../libs/additional-methods.min.js"></script>
+    
+    
+        
+		<script src="../js/skel.min.js"></script>
+		<script src="../js/skel-layers.min.js"></script>
+		<script src="../js/init.js"></script>
+        <script src="../js/reg-form.js"></script>
+	
+			<link rel="stylesheet" href="../css/skel.css" />
+			<link rel="stylesheet" href="../css/style.css" />
+			<link rel="stylesheet" href="../css/style-xlarge.css" />
+		
+        <!--<link rel="stylesheet" href="vendor/datepicker/datepicker.css">
+-->
+    <link rel="stylesheet" href="../css/main/reg-form.css">
+</head>
+
+<body class="landing">
+
+		<!-- Header -->
+			<header id="header">
+<h1><a href="http://swachh.get2thegames.com/index.html">Swachh Event</a></h1>
+				<nav id="nav">
+					<ul>
+						<li><a href="http://www.get2thegames.com">Home</a></li>
+						<li><a href="../views/cycling.html">Cycling</a></li>
+						<li><a href="../views/marathon.html">Marathon</a></li>
+						<li><a href="../views/TermsandConditions.html">Terms</a></li>
+<li><a href="reg-form.html" class="button special">Sign Up</a></li>
+				</nav>
+			</header>
+
+		<!-- Banner -->
+<!--<section id="banner"></section>-->
+
+		<!-- One -->
+		<!-- Two -->
+                <br>
+                <br><br><br>
+			<section id="two" class="wrapper style2 special">
+				<div class="container">
+					<header class="major">
+						<h2><a href="TermsandConditions.html">Terms & Conditions</a></h2>
+					  <p>Please read these terms and conditions carefully before registering for the event.</p>
+					</header>
+					<section class="profiles">
+						<form action="" method="post" id="form1">
+    <input type="radio" name="distance" id="distance" value="10KM Running" checked>10KM Run
+    <br>
+    <input type="radio" name="distance" id="distance" value="10KM Cycling">10KM Cycling
+    <br/>
+    <input type="radio" name="distance" id="distance" value="5KM Cycling">5KM Cycling
+    <br/>
+    <input type="radio" name="distance" id="distance" value="5KM Duathlon">5kM Duathlon
+    <br/>
+    <input type="radio" name="distance" id="distance" value="5KM Running">5KM Run
+    <br/>
+    <label name="radioDist" for="distance" class="error" style="display:none;">Please Select Distance</label>
+        <input type="text" id="Fname" name="Fname" placeholder="First Name"><br>
+        <input type="text" id="Lname" name="Lname" placeholder="Last Name"><br>
+        <input type="text" name="email" placeholder="Email Id"><br>
+        <input type="text" id="contactNo" name="contactNo" placeholder="Contact Number"><br>
+        <input id="address" name="address" type="text" placeholder="Address"><br>
+<!--
+        <input id="streetName" name="streetName" type="text" placeholder="Street Name"><br>
+        <input id="streetNo" name="streetNo" type="text" placeholder="Street Number"><br>
+-->
+        <input id="city" name="city" type="text" placeholder="City/Town"><br>
+        <input id="state" name="state" type="text" placeholder="State / Province / Region"><br>
+        <input id="pincode" name="pincode" type="text" placeholder="Pin Code"><br>
+ 
+        <!--<div class="input-group date" data-date-format="dd-mm-yyyy">
+            <input name="dob" id="dob" type="text" placeholder="Select Date Of Birth" readonly/>
+            <span id="calender"><i class="glyphicon glyphicon-calendar"></i></span>
+    </div><br>-->
+            <input name="dob" id="dob" type="text" placeholder="Enter Date Of Birth in (dd/mm/yy)"/><br>
+            <!--<input id="dob" name="dob" type="text" placeholder="Enter Age"><br>-->
+        <label for="dob" class="error" generated="true"></label>
+        <select name="shirt" id="shirt">
+            <option value="" selected="selected">T - Shirt Size</option>
+            <option>XS</option>
+            <option>S</option>
+            <option>M</option>
+            <option>L</option>
+            <option>XL</option>
+            <option>XXL</option>
+        </select><br>
+        <select name="blood">
+            <option value="" selected="selected">Blood group</option>
+            <option>A+</option>
+            <option>A-</option>
+            <option>B+</option>
+            <option>B-</option>
+            <option>AB+</option>
+            <option>AB-</option>
+            <option>O+</option>
+            <option>O-</option>
+        </select><br>
+        <input id="btn" type="button" value="Submit" />
+    </form>
+					</section>
+					
+				</div>
+</section>
+            
+		
+			</section>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="container">
+					<section class="links">
+						
+					</section>
+					<div class="row" align="center">
+						<div class="8u 12u$(medium)">
+							<ul class="copyright">
+								<li class="align-center">&copy; Get2TheGames. All rights reserved.</li>
+							</ul>
+						</div>
+						
+					</div>
+				</div>
+			</footer>
+</html>
